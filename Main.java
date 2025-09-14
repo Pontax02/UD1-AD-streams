@@ -72,12 +72,17 @@ public class Main {
                 anyMatch(c -> c.getSurface().isEmpty());
         /* 9. Lista de países que no están en Europa. */
         WORLD_COUNTRIES.stream().
+                filter(country -> !country.getContinent().equals(Continent.EUROPE)).
+                map(Country::getName).
+                sorted().
+                forEach(System.out::println);
+
 
         /* 10. Lista de países ordenados de manera natural. */
         /* 11. El país más poblado del mundo. */
         /* 12. El país menos poblado del mundo. */
         /* 13. El país que más y el país que menos habitantes tiene del mundo. */
-        /* 14. Los países con mas y con menos población de cada continente. */
+        /* 14. Los países con más y con menos población de cada continente. */
         /* 15. La población mundial como suma de la población de todos los países. */
         /* 16. La población total de Europa. */
         /* 17. La población de cada continente. */
