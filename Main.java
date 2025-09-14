@@ -90,6 +90,10 @@ public class Main {
                 .ifPresent(System.out::println);
 
         /* 12. El país menos poblado del mundo. */
+        WORLD_COUNTRIES.stream().
+                map(Country::getPopulation)
+                .min(Comparator.naturalOrder())
+                .ifPresent(System.out::println);
         /* 13. El país que más y el país que menos habitantes tiene del mundo. */
         /* 14. Los países con más y con menos población de cada continente. */
         /* 15. La población mundial como suma de la población de todos los países. */
