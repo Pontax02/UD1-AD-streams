@@ -79,7 +79,12 @@ public class Main {
 
 
         /* 10. Lista de países ordenados de manera natural. */
+
+        WORLD_COUNTRIES.stream().sorted().toList().forEach(System.out::println);
         /* 11. El país más poblado del mundo. */
+
+
+
         /* 12. El país menos poblado del mundo. */
         /* 13. El país que más y el país que menos habitantes tiene del mundo. */
         /* 14. Los países con más y con menos población de cada continente. */
