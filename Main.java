@@ -2,6 +2,7 @@
 import models.Continent;
 import models.Country;
 
+import java.util.Comparator;
 import java.util.stream.Collectors;
 
 import static models.Countries.WORLD_COUNTRIES;
@@ -80,10 +81,13 @@ public class Main {
 
         /* 10. Lista de países ordenados de manera natural. */
 
-        WORLD_COUNTRIES.stream().sorted().toList().forEach(System.out::println);
+        WORLD_COUNTRIES.stream().map(Country::getName).sorted().toList().forEach(System.out::println);
         /* 11. El país más poblado del mundo. */
 
-
+        WORLD_COUNTRIES.stream().
+                map(Country::getPopulation)
+                .max(Comparator.naturalOrder())
+                .ifPresent(System.out::println);
 
         /* 12. El país menos poblado del mundo. */
         /* 13. El país que más y el país que menos habitantes tiene del mundo. */
