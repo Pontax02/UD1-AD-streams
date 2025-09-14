@@ -2,6 +2,8 @@
 import models.Continent;
 import models.Country;
 
+import java.util.stream.Collectors;
+
 import static models.Countries.WORLD_COUNTRIES;
 
 public class Main {
@@ -47,11 +49,30 @@ public class Main {
                 toList().
                 forEach(System.out::println);
         /* 6. Mapa de nombres países (lista) clasificados por continente. */
+/*
+        WORLD_COUNTRIES.stream().
+                collect(Collectors.toMap(
+                        country -> Continent.values(),
+                        Country::getName
+                )).entrySet().stream()
+                .map(entry -> entry.getKey() + " " + entry.getValue())
+                .sorted()
+                .forEach(System.out::println);
+
+        */
 
 
         /* 7. Lista de países cuya superficie es conocida. */
+
+            WORLD_COUNTRIES.stream().
+                    anyMatch(c -> c.getSurface().isPresent());
+
         /* 8. Lista de países cuya superficie no es conocida. */
+        WORLD_COUNTRIES.stream().
+                anyMatch(c -> c.getSurface().isEmpty());
         /* 9. Lista de países que no están en Europa. */
+        WORLD_COUNTRIES.stream().
+
         /* 10. Lista de países ordenados de manera natural. */
         /* 11. El país más poblado del mundo. */
         /* 12. El país menos poblado del mundo. */
