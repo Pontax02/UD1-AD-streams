@@ -1,5 +1,6 @@
 
 import models.Continent;
+import models.Country;
 
 import static models.Countries.WORLD_COUNTRIES;
 
@@ -24,9 +25,30 @@ public class Main {
                 forEach(System.out::println);
 
         /* 3. Lista de países de América ordenados por el nombre del país. */
+
+        WORLD_COUNTRIES.stream().
+                filter(c -> c.getContinent().equals(Continent.AMERICAS)).
+                sorted().
+                toList().
+                forEach(System.out::println);
         /* 4. Lista de países de Europa ordenados de mayor a menor superficie. */
+/*
+        WORLD_COUNTRIES.stream()
+                .filter(c -> c.getContinent().equals(Continent.EUROPE)).
+                 map(Country::getSurface).
+                sorted().
+                toList().
+                forEach(System.out::println);*/
+
         /* 5. Lista de nombres de todos los países ordenada alfabéticamente. */
+        WORLD_COUNTRIES.stream().
+                map(Country::getName).
+                sorted().
+                toList().
+                forEach(System.out::println);
         /* 6. Mapa de nombres países (lista) clasificados por continente. */
+
+
         /* 7. Lista de países cuya superficie es conocida. */
         /* 8. Lista de países cuya superficie no es conocida. */
         /* 9. Lista de países que no están en Europa. */
